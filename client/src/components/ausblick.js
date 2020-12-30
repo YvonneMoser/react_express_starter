@@ -7,11 +7,11 @@ class Ausblick extends Component {
       <div class="input-container">
         <h4 class="title">Ausblick</h4>
         <form onSubmit={this.handleFormSubmit}>
-          <div className="inputLogin">
-            <label className="labelIcon">Tilgung nach 10 Jahren</label>
+          <div className="input-div">
+            <label className="label-text">Tilgung nach 10 Jahren</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -21,11 +21,11 @@ class Ausblick extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Kompletttilgung</label>
+          <div className="input-div">
+            <label className="label-text">Kompletttilgung</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -35,11 +35,11 @@ class Ausblick extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Cashflow nach 10 Jahren</label>
+          <div className="input-div">
+            <label className="label-text">Cashflow nach 10 Jahren</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -49,11 +49,11 @@ class Ausblick extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Zu versteuern nach 10 Jahren</label>
+          <div className="input-div">
+            <label className="label-text">Zu versteuern nach 10 Jahren</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={

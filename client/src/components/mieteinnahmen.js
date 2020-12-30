@@ -7,22 +7,22 @@ class Mieteinnahmen extends Component {
       <div class="input-container">
         <h4 class="title">Mieteinnahmen und Nebenkosten</h4>
         <form onSubmit={this.handleFormSubmit}>
-          <div className="inputLogin">
-            <label className="labelIcon">Nettomiete</label>
+          <div className="input-div">
+            <label className="label-text">Nettomiete</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={this.props.state && this.props.state.nettomiete}
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Netto pro QM</label>
+          <div className="input-div">
+            <label className="label-text">Netto pro QM</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -32,22 +32,22 @@ class Mieteinnahmen extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Wohngeld</label>
+          <div className="input-div">
+            <label className="label-text">Wohngeld</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={this.props.state && this.props.state.wohngeld}
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Davon umlagefähig</label>
+          <div className="input-div">
+            <label className="label-text">Davon umlagefähig</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -57,11 +57,11 @@ class Mieteinnahmen extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Nicht umlagefähig</label>
+          <div className="input-div">
+            <label className="label-text">Nicht umlagefähig</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -71,13 +71,13 @@ class Mieteinnahmen extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">
+          <div className="input-div">
+            <label className="label-text">
               Nettomiete nach nichtumlagefähigen NK
             </label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={

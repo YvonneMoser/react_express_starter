@@ -7,22 +7,22 @@ class Bank extends Component {
       <div class="input-container">
         <h4 class="title">Bank</h4>
         <form onSubmit={this.handleFormSubmit}>
-          <div className="inputLogin">
-            <label className="labelIcon">Eigenkapital</label>
+          <div className="input-div">
+            <label className="label-text">Eigenkapital</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={this.props.state && this.props.state.eigenkapital}
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Zu finanzieren</label>
+          <div className="input-div">
+            <label className="label-text">Zu finanzieren</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -32,33 +32,33 @@ class Bank extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Zinsen</label>
+          <div className="input-div">
+            <label className="label-text">Zinsen</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={this.props.state && this.props.state.zinsen}
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Tilgunsrate</label>
+          <div className="input-div">
+            <label className="label-text">Tilgunsrate</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={this.props.state && this.props.state.tilgungsrate}
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Annuität</label>
+          <div className="input-div">
+            <label className="label-text">Annuität</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -68,11 +68,11 @@ class Bank extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Differenz Cashflow/ Annuität</label>
+          <div className="input-div">
+            <label className="label-text">Differenz Cashflow/ Annuität</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={

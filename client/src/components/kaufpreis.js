@@ -8,33 +8,33 @@ class Kaufpreis extends Component {
       <div class="input-container">
         <h4 class="title">Kaufpreis & unmittelbare Nebenkosten</h4>
         <form onSubmit={this.handleFormSubmit}>
-          <div className="inputLogin">
-            <label className="labelIcon">Quadratmeter</label>
+          <div className="input-div">
+            <label className="label-text">Quadratmeter</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={this.props.state && this.props.state.qm}
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Kaufpreis</label>
+          <div className="input-div">
+            <label className="label-text">Kaufpreis</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={this.props.state && this.props.state.kaufpreis}
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Kaufpreis/QM</label>
+          <div className="input-div">
+            <label className="label-text">Kaufpreis/QM</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -44,22 +44,22 @@ class Kaufpreis extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Kaufnebenkosten</label>
+          <div className="input-div">
+            <label className="label-text">Kaufnebenkosten</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={this.props.state && this.props.state.nettomiete}
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Grunderwerbssteuer</label>
+          <div className="input-div">
+            <label className="label-text">Grunderwerbssteuer</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -69,11 +69,11 @@ class Kaufpreis extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Notar</label>
+          <div className="input-div">
+            <label className="label-text">Notar</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -83,11 +83,11 @@ class Kaufpreis extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Makler</label>
+          <div className="input-div">
+            <label className="label-text">Makler</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -97,11 +97,11 @@ class Kaufpreis extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Gesamt</label>
+          <div className="input-div">
+            <label className="label-text">Gesamt</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -111,22 +111,22 @@ class Kaufpreis extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Unmittelbare Instandhaltung</label>
+          <div className="input-div">
+            <label className="label-text">Unmittelbare Instandhaltung</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={this.props.state && this.props.state.instandhaltung}
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon boldText">GESAMT</label>
+          <div className="input-div">
+            <label className="label-text bold-text">GESAMT</label>
             <input
               disabled
-              className="input-login"
+              className="input"
               type="text"
               placeholder="wird berechnet"
               value={
