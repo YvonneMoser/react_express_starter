@@ -1,4 +1,7 @@
-export function calculateReturnOnInvest(data){
+export function round(number) {
+  return Math.round(number * 100) / 100;
+}
+export function calculateReturnOnInvest(data) {
   const wohngeld = parseInt(data.wohngeld);
   const qm = parseInt(data.qm);
   const makler = parseInt(data.makler) / 100;
@@ -11,40 +14,40 @@ export function calculateReturnOnInvest(data){
   const tilgungsrate = parseInt(data.tilgungsrate) / 100;
 
   // Berechnet
-  const kaufpreisqm = kaufpreis / qm;
-  const grunderwerbssteuerSum = kaufpreis * grunderwerbssteuer;
-  const notar = kaufpreis * 0.015; // konfigurierbar machen?
-  const maklerSum = makler * kaufpreis;
+  const kaufpreisqm = round(kaufpreis / qm);
+  const grunderwerbssteuerSum = round(kaufpreis * grunderwerbssteuer);
+  const notar = round(kaufpreis * 0.015); // konfigurierbar machen?
+  const maklerSum = round(makler * kaufpreis);
   const gesamtOhneInstand =
-    kaufpreis + grunderwerbssteuerSum + notar + maklerSum;
-  const gesamt = gesamtOhneInstand + instandhaltung;
+    round(kaufpreis + grunderwerbssteuerSum + notar + maklerSum);
+  const gesamt = round(gesamtOhneInstand + instandhaltung);
 
-  const nettoqm = nettomiete / qm;
-  const umlagefähigeNebenkosten = 0.6 * wohngeld; // konfigurierbar
-  const nichtUmlageFähigeNebenkosten = 0.4 * wohngeld;
+  const nettoqm = round(nettomiete / qm);
+  const umlagefähigeNebenkosten = round(0.6 * wohngeld); // konfigurierbar
+  const nichtUmlageFähigeNebenkosten = round(0.4 * wohngeld);
   const nettoMieteNachNichtUmlagefähigenNK =
-    nettomiete - nichtUmlageFähigeNebenkosten;
-  const zuFinanzierendeSumme = gesamtOhneInstand - eigenkapital;
+    round(nettomiete - nichtUmlageFähigeNebenkosten);
+  const zuFinanzierendeSumme = round(gesamtOhneInstand - eigenkapital);
 
   const annuität =
-    (zuFinanzierendeSumme * zinsen + tilgungsrate * zuFinanzierendeSumme) / 12;
+    round((zuFinanzierendeSumme * zinsen + tilgungsrate * zuFinanzierendeSumme) / 12);
 
   const differenzCashflowAnnuität =
-    nettoMieteNachNichtUmlagefähigenNK - annuität;
+    round(nettoMieteNachNichtUmlagefähigenNK - annuität);
   const jährlicheNettomieteNachNichtumlagefähigenNebenkosten =
-    nettoMieteNachNichtUmlagefähigenNK * 12;
+    round(nettoMieteNachNichtUmlagefähigenNK * 12);
   const ergebnisNachZinsen =
-    jährlicheNettomieteNachNichtumlagefähigenNebenkosten -
-    zinsen * (gesamtOhneInstand - eigenkapital);
+    round(jährlicheNettomieteNachNichtumlagefähigenNebenkosten -
+    zinsen * (gesamtOhneInstand - eigenkapital));
   const steuerlichesErgebnisNachAfA =
-    ergebnisNachZinsen - kaufpreis * 0.3 * 0.02;
-  const jährlicheNettoMieteRendite = (ergebnisNachZinsen / gesamt) * 100;
-  const tilgungNach10Jahren = tilgungsrate * zuFinanzierendeSumme * 10;
+    round(ergebnisNachZinsen - kaufpreis * 0.3 * 0.02);
+  const jährlicheNettoMieteRendite = round((ergebnisNachZinsen / gesamt) * 100);
+  const tilgungNach10Jahren = round(tilgungsrate * zuFinanzierendeSumme * 10);
   const jahreBisTilgung =
-    zuFinanzierendeSumme / (tilgungsrate * zuFinanzierendeSumme);
-  const cashFlowNach10Jahren = 10 * ergebnisNachZinsen - 0.005 * gesamt;
+    round(zuFinanzierendeSumme / (tilgungsrate * zuFinanzierendeSumme));
+  const cashFlowNach10Jahren = round(10 * ergebnisNachZinsen - 0.005 * gesamt);
   const zuVersteuernNach10Jahren =
-    cashFlowNach10Jahren - 10 * 0.02 * (0.3 * kaufpreis);
+    round(cashFlowNach10Jahren - 10 * 0.02 * (0.3 * kaufpreis));
 
   const calculatedData = {
     kaufpreisqm,
@@ -70,5 +73,5 @@ export function calculateReturnOnInvest(data){
     zuVersteuernNach10Jahren,
   };
 
-  return calculatedData
+  return calculatedData;
 }

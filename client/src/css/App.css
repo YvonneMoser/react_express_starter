@@ -5,7 +5,7 @@
 
 /* ---- reset ---- */
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto";
 }
 
 html {
@@ -26,7 +26,7 @@ body {
 
 body {
   color: #111;
-  font-size: 16px;
+  font-size: 25px;
   line-height: 147%;
 }
 
@@ -76,7 +76,7 @@ section.testimonials .button {
 }
 
 body {
-  background-color: white;
+  background-color: rgba(231, 236, 236, 0.637);
   margin: 0;
 }
 
