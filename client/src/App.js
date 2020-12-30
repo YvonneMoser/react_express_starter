@@ -22,7 +22,7 @@ class App extends Component {
           </p>
         </div>
         <Switch>
-          <RenditeCalc exact path="/rendite" component={RenditeCalc} />
+          <RenditeCalc component={RenditeCalc} />
         </Switch>
       </div>
     );
