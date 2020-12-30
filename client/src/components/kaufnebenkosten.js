@@ -3,7 +3,6 @@ import "./../css/Login.css";
 
 class Kaufpreis extends Component {
   render() {
-    console.log("props", this.props);
     return (
       <div>
         <h4 class="title">Kaufnebenkosten</h4>

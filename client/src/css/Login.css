@@ -37,13 +37,14 @@
 }
 
 .input {
-  min-height: 68px;
+  min-height: 34px;
+  max-height: 34px;
   background: white;
   border: 1px solid rgba(39, 38, 38, 0.521);
   border-radius: 15px;
   color: "black";
   flex: 1;
-  font-size: 25px;
+  font-size: 12px;
   overflow: scroll;
   padding-left: 10px;
 }
@@ -65,7 +66,7 @@
 }
 
 .output-container {
-  margin: 20px;
+  margin: 10px;
   background-color: white;
   border-radius: 15px;
   border-width: 1px;
@@ -87,6 +88,7 @@
   border-style: solid;
   -webkit-box-shadow: 3px 3px 12px 8px rgba(0, 0, 0, 0.51);
   box-shadow: 3px 3px 12px 8px rgba(0, 0, 0, 0.51);
+  margin-bottom: 40px;
 }
 
 .output {
@@ -109,7 +111,7 @@
   flex-direction: row;
   font-weight: bold;
   height: fit-content;
-  min-height: 40px;
+  min-height: 20px;
   font-size: 20 !important;
 }
 
@@ -176,7 +178,9 @@ div.no-button-style:hover .info-span {
 }
 
 .output-div {
-  width: 33vw;
+  width: 30vw;
+  min-width: 250px;
+  flex-grow: inherit;
   display: flex;
   justify-content: space-between;
   margin-bottom: -10px;
@@ -186,8 +190,9 @@ div.no-button-style:hover .info-span {
 .input-var-div {
   /* width: 2vw; */
   /* min-width: 450px; */
+  justify-content: space-between;
   width: 30%;
-  min-width: 450px;
+  min-width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -200,7 +205,7 @@ div.no-button-style:hover .info-span {
   text-align: start;
   margin: 0 auto;
   height: fit-content;
-  min-height: 40px;
+  min-height: 10px;
   overflow: scroll;
   font-size: 10 !important;
   display: flex;
@@ -211,8 +216,8 @@ div.no-button-style:hover .info-span {
 
 .label-text-input {
   font-weight: bold;
-  height: 40px;
-  font-size: 20 !important;
+  height: 20px;
+  font-size: 10 !important;
   display: flex;
   align-items: center;
   overflow: scroll;
@@ -239,15 +244,15 @@ div.no-button-style:hover .info-span {
   border-color: #009282;
   /* margin: 00px 0px 0px 30px; */
   margin: 30px 5px 0px 5px;
-  min-width: 450px;
-  width: 33%;
-  padding: 10px;
+  min-width: 250px;
+  width: 30%;
+  padding: 5px;
   font-weight: normal;
   border-radius: 15px;
   color: white;
   /* border: 1px solid white; */
-  font-size: 30px;
-  height: 68px;
+  font-size: 16px;
+  height: 34px;
   -webkit-box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.21);
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.21);
   align-self: flex-end;
@@ -275,11 +280,11 @@ div.no-button-style:hover .info-span {
 }
 
 .p-text {
-  font-size: 30px;
+  font-size: 15px;
   width: 80vw;
   text-align: justify;
-  margin: 30px auto;
-  line-height: 40px;
+  margin: 15px auto;
+  line-height: 20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -288,7 +293,7 @@ div.no-button-style:hover .info-span {
   }
 }
 
-@media only screen and (max-width: 1227px) {
+@media only screen and (max-width: 727px) {
   .input-field-divs {
     justify-content: center !important;
   }
@@ -297,8 +302,39 @@ div.no-button-style:hover .info-span {
   }
 }
 
-@media only screen and (max-width: 1456px) {
+@media only screen and (max-width: 1019px) {
   .output {
     justify-content: center;
   }
+
+  .output-div {
+    width: 70vw;
+  }
+}
+
+.impressum {
+  font-size: 10px;
+  line-height: 10px;
+}
+
+a.impressum {
+  color: #009282;
+}
+
+.arrow-button {
+  border: 1px solid #009282;
+  height: 40px;
+  width: 40px;
+  justify-content: center;
+  vertical-align: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  display: flex;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 100px;
+  -webkit-box-shadow: 3px 3px 12px 8px rgba(0, 0, 0, 0.21);
+  box-shadow: 3px 3px 12px 8px rgba(0, 0, 0, 0.21);
 }

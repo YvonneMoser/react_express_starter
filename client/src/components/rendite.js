@@ -5,6 +5,8 @@ import Kaufpreis from "./kaufnebenkosten";
 import Mieteinnahmen from "./mietverhältnis";
 import RenditeObjekt from "./finanzierungUndRendite";
 import InfoIcon from "@material-ui/icons/Info";
+import {  animateScroll as scroll} from 'react-scroll'
+
 
 class Login extends Component {
   state = {
@@ -61,7 +63,7 @@ class Login extends Component {
       tilgungsrate,
     })
     this.setState({ calculatedData: sum });
-    console.log("sttatttt", this.state);
+    scroll.scrollMore(800);
   };
 
   handleChange = (event) => {
@@ -265,11 +267,11 @@ class Login extends Component {
             </form>
           </div>
 
-          {this.state.calculatedData &&
+         {this.state.calculatedData &&
                 this.state.calculatedData.jährlicheNettoMieteRendite ? 
                 <div>
                 <h1 style={{margin: '40px', marginTop: '80px'}}>Ausgabe</h1>
-                <p className="p-text">Deine jährliche <span className="sum-span">Nettomietrendite beträgt {this.state.calculatedData.jährlicheNettoMieteRendite}</span>. 
+                <p className="p-text">Deine jährliche <span className="sum-span">Nettomietrendite beträgt {'this.state.calculatedData.jährlicheNettoMieteRendite'}</span>. 
                 D.h. du erhältst jedes Jahr diese Rendite auf die Summe aus Darlehensbetrag und Eigenkapital, sprich den Wert der Immobilie plus Nebenkosten. Am Aktienmarkt kannst du vermutlich langfristig eine höhere Rendite erzielen, allerdings erzielst du diese Rendite nur mit Eigenkapital und nicht auf Fremdkapital. Eine potentielle Wertsteigerung deiner Immobilie ist bei dieser Rendite nicht berücksichtigt.
                 Die meisten Investoren versuchen auf einen Wert von 3% zu kommen. In sehr gefragten Städten wie München geben sich viele mit 2,0-2,5% zufrieden und spekulieren auf Wertsteigerung.
                 </p>
@@ -283,9 +285,10 @@ class Login extends Component {
                 {/* <Bank state={this.state}></Bank>
                 <Ausblick state={this.state}></Ausblick> */}
                 {/* <p className="output-container" style={{width: '35vw', marginTop: '80px'}} >Du kannst in der Eingabemaske deine Inputvariablen anpassen und die Berechnung erneut starten, um zu sehen wie sich der Output verändert.</p> */}
-                </div></div> : null
+                </div></div> 
+                : null 
               
-              }
+               } 
           
           
         </div>

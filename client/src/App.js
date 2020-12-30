@@ -2,28 +2,43 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
-import Customers from "./components/customers";
 import RenditeCalc from "./components/rendite";
-import immoLogo from "./immoLogo.png"
+import immoLogo from "./immoLogo.png";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import {  animateScroll as scroll} from 'react-scroll'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header style={{height: '400px', margin: '50px'}}>
-          <img style={{height: '400px'}} src={immoLogo}></img>
+        <header style={{height: '200px', margin: '20px'}}>
+          <img style={{height: '200px'}} src={immoLogo}></img>
         </header>
         <div>
-          <h1 style={{fontSize: '40px', width: '80vw', textAlign: 'start', margin: 'auto'}}>
+          <h1 style={{fontSize: '20px', width: '80vw', textAlign: 'start', margin: 'auto'}}>
           Rendite für Immobilie zur Vermietung berechnen
           </h1>
-          <p style={{fontSize: '30px', width: '80vw', textAlign: 'justify', margin: '30px auto', lineHeight: "40px"}}>
+          <p style={{fontSize: '15px', width: '80vw', textAlign: 'justify', margin: '15px auto', lineHeight: "20px"}}>
           Befülle einfach die untenstehenden Felder für deine Immobilie und berechne mit einem Klick deine Rendite sowie weitere Kennzahlen (Cashflow, Kaufnebenkosten, monatliche Belastung etc.). Derzeit funktioniert der Rechner nur für Immobilien in Deutschland.
           </p>
         </div>
         <Switch>
           <RenditeCalc component={RenditeCalc} />
         </Switch>
+        <div style={{marginBottom: '20px'}}>
+          <img style={{height: '50px'}} src={immoLogo}></img>
+          <p className="impressum">{"Made with <3 in Munich"}</p>
+          <p className="impressum">Feedback?</p>
+          <div style={{display: 'flex', flexDirection: 'row', justifyContent:'center', alignContent: 'center', verticalAlign:'center', alignItems: 'center'}}>
+            <CopyToClipboard text="leonbszeli@gmail.com"><a className="impressum">leonbszeli@gmail.com</a></CopyToClipboard>
+            <CopyToClipboard text="leonbszeli@gmail.com"><FileCopyIcon style={{color: '#009282', fontSize: '12px', marginLeft: '5px'}} className="info-icon" /></CopyToClipboard>
+          </div>
+        </div>
+        <button onClick={()=>{scroll.scrollToTop();}} className="arrow-button">
+          <ArrowUpwardIcon style={{color: '#009282', alignSelf: 'center'}}/>
+        </button>
       </div>
     );
   }
