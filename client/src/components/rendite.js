@@ -87,21 +87,21 @@ class Login extends Component {
       tilgungsrate,
     } = this.state;
     return (
-      <div className="body-blue">
+      <div className="main-container">
         <div className="flex-container">
           <div class="input-container">
             <h4 class="title">Input Variablen</h4>
             <form onSubmit={this.handleFormSubmit}>
-              <div className="inputLogin">
+              <div className="input-container">
                 <div class="info-icon-container">
-                  <label className="labelWithIcon">Quadratmeter</label>
+                  <label className="input-label-with-info">Quadratmeter</label>
                   <div className="no-button-style">
                     <InfoIcon fontSize="small" className="info-icon" />
                     <span>Hello</span>
                   </div>
                 </div>
                 <input
-                  className="input-login"
+                  className="input-field"
                   type="number"
                   name="qm"
                   placeholder="Quadratmeter"
@@ -110,10 +110,10 @@ class Login extends Component {
                 />
               </div>
               <br />
-              <div className="inputLogin">
-                <label className="labelIcon">Makler</label>
+              <div className="input-container">
+                <label className="input-label">Makler</label>
                 <input
-                  className="input-login"
+                  className="input-field"
                   type="number"
                   name="makler"
                   placeholder="Makler"
@@ -122,10 +122,10 @@ class Login extends Component {
                 />
               </div>
               <br />
-              <div className="inputLogin">
-                <label className="labelIcon">Instandhaltung</label>
+              <div className="input-container">
+                <label className="input-label">Instandhaltung</label>
                 <input
-                  className="input-login"
+                  className="input-field"
                   type="number"
                   name="instandhaltung"
                   placeholder="Instandhaltung"
@@ -134,10 +134,10 @@ class Login extends Component {
                 />
               </div>
               <br />
-              <div className="inputLogin">
-                <label className="labelIcon">Nettomiete</label>
+              <div className="input-container">
+                <label className="input-label">Nettomiete</label>
                 <input
-                  className="input-login"
+                  className="input-field"
                   type="number"
                   name="nettomiete"
                   placeholder="Nettomiete"
@@ -146,10 +146,10 @@ class Login extends Component {
                 />
               </div>
               <br />
-              <div className="inputLogin">
-                <label className="labelIcon">Wohngeld</label>
+              <div className="input-container">
+                <label className="input-label">Wohngeld</label>
                 <input
-                  className="input-login"
+                  className="input-field"
                   type="number"
                   name="wohngeld"
                   placeholder="Wohngeld"
@@ -158,10 +158,10 @@ class Login extends Component {
                 />
               </div>
               <br />
-              <div className="inputLogin">
-                <label className="labelIcon">Grunderwerbssteuer</label>
+              <div className="input-container">
+                <label className="input-label">Grunderwerbssteuer</label>
                 <input
-                  className="input-login"
+                  className="input-field"
                   type="number"
                   name="grunderwerbssteuer"
                   placeholder="Grunderwerbssteuer"
@@ -170,10 +170,10 @@ class Login extends Component {
                 />
               </div>
               <br />
-              <div className="inputLogin">
-                <label className="labelIcon">Kaufpreis</label>
+              <div className="input-container">
+                <label className="input-label">Kaufpreis</label>
                 <input
-                  className="input-login"
+                  className="input-field"
                   type="number"
                   name="kaufpreis"
                   placeholder="Kaufpreis"
@@ -182,10 +182,10 @@ class Login extends Component {
                 />
               </div>
               <br />
-              <div className="inputLogin">
-                <label className="labelIcon">Eigenkapital</label>
+              <div className="input-container">
+                <label className="input-label">Eigenkapital</label>
                 <input
-                  className="input-login"
+                  className="input-field"
                   type="number"
                   name="eigenkapital"
                   placeholder="Eigenkapital"
@@ -194,10 +194,10 @@ class Login extends Component {
                 />
               </div>
               <br />
-              <div className="inputLogin">
-                <label className="labelIcon">Zinsen</label>
+              <div className="input-container">
+                <label className="input-label">Zinsen</label>
                 <input
-                  className="input-login"
+                  className="input-field"
                   type="number"
                   name="zinsen"
                   placeholder="Zinsen"
@@ -206,10 +206,10 @@ class Login extends Component {
                 />
               </div>
               <br />
-              <div className="inputLogin">
-                <label className="labelIcon">Tilgungsrate</label>
+              <div className="input-container">
+                <label className="input-label">Tilgungsrate</label>
                 <input
-                  className="input-login"
+                  className="input-field"
                   type="number"
                   name="tilgungsrate"
                   placeholder="Tilgungsrate"
@@ -217,7 +217,7 @@ class Login extends Component {
                   onChange={this.handleChange}
                 />
               </div>
-              <button className="button-login" type="submit" value="Login">
+              <button className="calculate-button" type="submit" value="Login">
                 Rendite berechnen
               </button>
             </form>

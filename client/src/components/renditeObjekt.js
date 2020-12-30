@@ -7,11 +7,11 @@ class RenditeObjekt extends Component {
       <div class="input-container">
         <h4 class="title">Rendite des Objekts</h4>
         <form onSubmit={this.handleFormSubmit}>
-          <div className="inputLogin">
-            <label className="labelIcon">Jährliche Nettomiete nach NK</label>
+          <div className="input-container">
+            <label className="input-label">Jährliche Nettomiete nach NK</label>
             <input
               disabled
-              className="input-login"
+              className="input-field"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -22,13 +22,13 @@ class RenditeObjekt extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">
+          <div className="input-container">
+            <label className="input-label">
               Steuerliches Ergebnis (nach AfA)
             </label>
             <input
               disabled
-              className="input-login"
+              className="input-field"
               type="text"
               placeholder="wird berechnet"
               value={
@@ -38,11 +38,11 @@ class RenditeObjekt extends Component {
             />
           </div>
           <br />
-          <div className="inputLogin">
-            <label className="labelIcon">Jährliche Nettomietrendite</label>
+          <div className="input-container">
+            <label className="input-label">Jährliche Nettomietrendite</label>
             <input
               disabled
-              className="input-login"
+              className="input-field"
               type="text"
               placeholder="wird berechnet"
               value={
