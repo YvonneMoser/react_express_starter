@@ -37,8 +37,11 @@ class Mieteinnahmen extends Component {
                 </div>
               </div>
               <p>
-                {this.props.state && this.props.state.wohngeld
-                  ? `${numberWithCommas(this.props.state.wohngeld)} €`
+                {this.props.state.calculatedData &&
+                this.props.state.calculatedData.nichtUmlageFähigesWohngeld
+                  ? `${numberWithCommas(
+                      this.props.state.calculatedData.nichtUmlageFähigesWohngeld
+                    )} €`
                   : "wird berechnet"}
               </p>
             </div>
@@ -58,9 +61,9 @@ class Mieteinnahmen extends Component {
               </div>
               <p>
                 {this.props.state.calculatedData &&
-                this.props.state.calculatedData.umlagefähigeNebenkosten
+                this.props.state.calculatedData.umlagefähigesWohngeld
                   ? `${numberWithCommas(
-                      this.props.state.calculatedData.umlagefähigeNebenkosten
+                      this.props.state.calculatedData.umlagefähigesWohngeld
                     )} €`
                   : "wird berechnet"}
               </p>
@@ -69,7 +72,7 @@ class Mieteinnahmen extends Component {
             <div className="output-div">
               <div className="info-icon-container-2">
                 <label className="font-weight-normal">
-                  Nettomiete nach nicht-umlagefähigem Wohngeld
+                  Kaltmiete nach nicht-umlagefähigem Wohngeld
                 </label>
                 <div className="no-button-style">
                   <InfoIcon className="info-icon" />

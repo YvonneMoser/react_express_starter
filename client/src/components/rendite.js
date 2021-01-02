@@ -172,7 +172,7 @@ class Login extends Component {
                       className="input"
                       type="number"
                       name="kaufpreis"
-                      placeholder="z.B. 400.000"
+                      placeholder="z.B. 400000"
                       value={kaufpreis}
                       onChange={this.handleChange}
                     />
@@ -263,7 +263,7 @@ class Login extends Component {
                       className="input"
                       type="number"
                       name="instandhaltung"
-                      placeholder="z.B. 10.000"
+                      placeholder="z.B. 10000"
                       value={instandhaltung}
                       onChange={this.handleChange}
                     />
@@ -337,7 +337,7 @@ class Login extends Component {
                       className="input"
                       type="number"
                       name="eigenkapital"
-                      placeholder="z.B. 80.000"
+                      placeholder="z.B. 80000"
                       value={eigenkapital}
                       onChange={this.handleChange}
                     />

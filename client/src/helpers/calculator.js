@@ -5,7 +5,10 @@ export function round(number) {
 
 export function numberWithCommas(number) {
   try {
-    return number.toFixed(2).toLocaleString("de");
+    return number.toLocaleString("de", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
   } catch (e) {
     return number;
   }
@@ -24,6 +27,8 @@ export function calculateReturnOnInvest(data) {
   const tilgungsrate = Number(data.tilgungsrate) / 100;
 
   // Berechnet
+  const nichtUmlageFähigesWohngeld = round(wohngeld * 0.7);
+  const umlagefähigesWohngeld = round(wohngeld - nichtUmlageFähigesWohngeld);
   const kaufpreisqm = round(kaufpreis / qm);
   const grunderwerbssteuerSum = round(kaufpreis * grunderwerbssteuer);
   const notar = round(kaufpreis * 0.015); // konfigurierbar machen?
@@ -38,7 +43,7 @@ export function calculateReturnOnInvest(data) {
   const umlagefähigeNebenkosten = round(0.6 * wohngeld); // konfigurierbar
   const nichtUmlageFähigeNebenkosten = round(0.4 * wohngeld);
   const nettoMieteNachNichtUmlagefähigenNK = round(
-    nettomiete - nichtUmlageFähigeNebenkosten
+    nettomiete - umlagefähigesWohngeld
   );
   const zuFinanzierendeSumme = round(gesamtOhneInstand - eigenkapital);
 
@@ -82,6 +87,7 @@ export function calculateReturnOnInvest(data) {
     nebenkostenGesamt,
     zuFinanzieren,
     nettoMieteNachNichtUmlagefähigenNK,
+    umlagefähigesWohngeld,
     nichtUmlageFähigeNebenkosten,
     zuFinanzierendeSumme,
     annuität,
@@ -94,6 +100,7 @@ export function calculateReturnOnInvest(data) {
     jahreBisTilgung,
     cashFlowNach10Jahren,
     zuVersteuernNach10Jahren,
+    nichtUmlageFähigesWohngeld,
   };
 
   return calculatedData;
