@@ -112,7 +112,7 @@ class Login extends Component {
   }
 
   generateLink() {
-    let link = "http://localhost:3000/rendite?"; //"https://yvonnemoser.github.io/react_express_starter/rendite?";
+    let link = "https://immo-return/rendite?";
     const dataToBeSet = [
       "eigenkapital",
       "qm",
