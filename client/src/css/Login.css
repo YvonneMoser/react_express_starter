@@ -49,6 +49,7 @@
   font-size: 14px;
   overflow: scroll;
   padding-left: 10px;
+  padding-right: 10px;
 }
 
 .currency-input {
@@ -61,6 +62,7 @@
   min-width: 40px;
   max-width: 40px;
   font-size: 14px;
+  border-left: 0;
 }
 
 .input-wrapper {
@@ -472,6 +474,7 @@ select {
   -webkit-transition: 0.25s all ease;
   -o-transition: 0.25s all ease;
   transition: 0.25s all ease;
+  border-left: 1px solid rgba(39, 38, 38, 0.521);
 }
 /* Transition */
 .select:hover::after {
