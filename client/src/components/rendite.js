@@ -8,7 +8,6 @@ import InfoIcon from "@material-ui/icons/Info";
 import { animateScroll as scroll } from "react-scroll";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
-import { CompassCalibrationOutlined } from "@material-ui/icons";
 
 const queryString = require("query-string");
 
