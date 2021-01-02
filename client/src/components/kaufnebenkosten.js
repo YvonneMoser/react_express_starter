@@ -1,30 +1,35 @@
 import React, { Component } from "react";
 import "./../css/Login.css";
+import { numberWithCommas } from "../helpers/calculator";
 
 class Kaufpreis extends Component {
   render() {
     return (
       <div>
-        <h4 class="title">Kaufnebenkosten</h4>
-        <div class="output-container">
+        <h4 className="title">Kaufnebenkosten</h4>
+        <div className="output-container">
           <form onSubmit={this.handleFormSubmit}>
             <div className="output-div">
               <label className="label-text">Makler</label>
               <p>
                 {this.props.state.calculatedData &&
                 this.props.state.calculatedData.maklerSum
-                  ? `${this.props.state.calculatedData.maklerSum} €`
+                  ? `${numberWithCommas(
+                      this.props.state.calculatedData.maklerSum
+                    )} €`
                   : "wird berechnet"}
               </p>
             </div>
             <br />
 
             <div className="output-div">
-              <label className="label-text">Notar</label>
+              <label className="label-text">Notar und Grundbuch</label>
               <p>
                 {this.props.state.calculatedData &&
                 this.props.state.calculatedData.notar
-                  ? `${this.props.state.calculatedData.notar} €`
+                  ? `${numberWithCommas(
+                      this.props.state.calculatedData.notar
+                    )} €`
                   : "wird berechnet"}
               </p>
             </div>
@@ -35,7 +40,9 @@ class Kaufpreis extends Component {
               <p>
                 {this.props.state.calculatedData &&
                 this.props.state.calculatedData.grunderwerbssteuerSum
-                  ? `${this.props.state.calculatedData.grunderwerbssteuerSum} €`
+                  ? `${numberWithCommas(
+                      this.props.state.calculatedData.grunderwerbssteuerSum
+                    )} €`
                   : "wird berechnet"}
               </p>
             </div>
@@ -44,8 +51,11 @@ class Kaufpreis extends Component {
             <div className="output-div">
               <label className="label-text bold-text">Nebenkosten gesamt</label>
               <p>
-                {this.props.state && this.props.state.nettomiete
-                  ? `${this.props.state.nettomiete} €`
+                {this.props.state.calculatedData &&
+                this.props.state.calculatedData.nebenkostenGesamt
+                  ? `${numberWithCommas(
+                      this.props.state.calculatedData.nebenkostenGesamt
+                    )} €`
                   : "wird berechnet"}
               </p>
             </div>
@@ -53,12 +63,14 @@ class Kaufpreis extends Component {
 
             <div className="output-div">
               <label className="label-text bold-text">
-                Kaufpreis inkl Nebenkosten
+                Kaufpreis inkl. Nebenkosten
               </label>
               <p>
                 {this.props.state.calculatedData &&
                 this.props.state.calculatedData.gesamtOhneInstand
-                  ? `${this.props.state.calculatedData.gesamtOhneInstand} €`
+                  ? `${numberWithCommas(
+                      this.props.state.calculatedData.gesamtOhneInstand
+                    )} €`
                   : "wird berechnet"}
               </p>
             </div>
@@ -67,8 +79,10 @@ class Kaufpreis extends Component {
               <label className="label-text bold-text">Zu finanzieren</label>
               <p>
                 {this.props.state.calculatedData &&
-                this.props.state.calculatedData.gesamt
-                  ? `${this.props.state.calculatedData.gesamt} €`
+                this.props.state.calculatedData.zuFinanzieren
+                  ? `${numberWithCommas(
+                      this.props.state.calculatedData.zuFinanzieren
+                    )} €`
                   : "wird berechnet"}
               </p>
             </div>
