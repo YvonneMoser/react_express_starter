@@ -112,7 +112,7 @@ class Login extends Component {
   }
 
   generateLink() {
-    let link = "https://immo-return/rendite?";
+    let link = "https://immo-return.com/#/rendite?";
     const dataToBeSet = [
       "eigenkapital",
       "qm",
@@ -170,6 +170,7 @@ class Login extends Component {
                       required
                       className="input"
                       type="number"
+                      step="0.01"
                       name="kaufpreis"
                       placeholder="z.B. 400000"
                       value={kaufpreis}
@@ -191,6 +192,7 @@ class Login extends Component {
                       required
                       className="input"
                       type="number"
+                      step="0.01"
                       name="qm"
                       placeholder="z.B. 80"
                       value={qm}
@@ -209,6 +211,7 @@ class Login extends Component {
                       required
                       className="input"
                       type="number"
+                      step="0.01"
                       name="nettomiete"
                       placeholder="z.B. 800"
                       value={nettomiete}
@@ -235,6 +238,7 @@ class Login extends Component {
                     <input
                       required
                       className="input"
+                      step="0.01"
                       type="number"
                       name="wohngeld"
                       placeholder="z.B. 240"
@@ -251,7 +255,7 @@ class Login extends Component {
                     <div className="no-button-style">
                       <InfoIcon className="info-icon" />
                       <span className="info-span">
-                        Falls einmalige Renovierungskosten fällig sind (z.B.
+                        Falls unmittelbare Renovierungskosten anfallen (z.B.
                         neue Küche oder Bad). Falls nicht, 0 eintragen.
                       </span>
                     </div>
@@ -260,6 +264,7 @@ class Login extends Component {
                     <input
                       required
                       className="input"
+                      step="0.01"
                       type="number"
                       name="instandhaltung"
                       placeholder="z.B. 10000"
@@ -276,7 +281,8 @@ class Login extends Component {
                     <div className="no-button-style">
                       <InfoIcon className="info-icon" />
                       <span className="info-span">
-                        Das Bundesland beeinflusst die Grunderwerbssteuer.
+                        Das Bundesland beeinflusst die Höhe der
+                        Grunderwerbssteuer.
                       </span>
                     </div>
                   </div>
@@ -334,6 +340,7 @@ class Login extends Component {
                     <input
                       required
                       className="input"
+                      step="0.01"
                       type="number"
                       name="eigenkapital"
                       placeholder="z.B. 80000"
@@ -359,6 +366,7 @@ class Login extends Component {
                     <input
                       required
                       className="input"
+                      step="0.01"
                       type="number"
                       name="zinsen"
                       placeholder="z.B. 1,2"
@@ -375,8 +383,8 @@ class Login extends Component {
                     <div className="no-button-style">
                       <InfoIcon className="info-icon" />
                       <span className="info-span">
-                        Die meisten Tilgen zwischen 2% und 3% des Kaufpreises
-                        pro Jahr.
+                        Die meisten Immobilienkäufer tilgen zwischen 2% und 3%
+                        des Kaufpreises pro Jahr.
                       </span>
                     </div>
                   </div>
@@ -384,6 +392,7 @@ class Login extends Component {
                     <input
                       required
                       className="input"
+                      step="0.01"
                       type="number"
                       name="tilgungsrate"
                       placeholder="z.B. 3"
@@ -400,8 +409,11 @@ class Login extends Component {
                     <div className="no-button-style">
                       <InfoIcon className="info-icon" />
                       <span className="info-span">
-                        Nur den Anteil, den der Käufer trägt.Falls kein Makler
-                        involviert ist, einfach 0 eintragen.
+                        Nur den Anteil eingeben, der vom Käufer zu tragen ist.
+                        Seit dem 23.12.2020 dürfen dem Käufer nämlich nicht mehr
+                        alas 50% der anfallenden Courtage in Rechnung gestellt
+                        werden. Falls kein Makler involviert ist, einfach 0
+                        eintragen.
                       </span>
                     </div>
                   </div>
@@ -409,6 +421,7 @@ class Login extends Component {
                     <input
                       required
                       className="input"
+                      step="0.01"
                       type="number"
                       name="makler"
                       placeholder="z.B. 1,8"
@@ -428,13 +441,17 @@ class Login extends Component {
           {this.state.calculatedData &&
           this.state.calculatedData.jährlicheNettoMieteRendite ? (
             <div>
-              <h1 style={{ margin: "40px", marginTop: "80px" }}>Ausgabe</h1>
+              <h1 style={{ margin: "40px", marginTop: "80px" }}>
+                Deine Berechnung
+              </h1>
 
               <p className="p-text">
                 Deine jährliche{" "}
                 <span className="sum-span">
                   Nettomietrendite beträgt{" "}
-                  {this.state.calculatedData.jährlicheNettoMieteRendite || "-"}{" "}
+                  {JSON.stringify(
+                    this.state.calculatedData.jährlicheNettoMieteRendite
+                  ).replace(".", ",") || "-"}
                   %
                 </span>
                 . D.h. du erhältst jedes Jahr diese Rendite auf die Summe aus
@@ -484,7 +501,10 @@ class Login extends Component {
                   <p style={{ marginRight: "5px" }}>
                     Klicke, um Link zu deiner Berechnung zu kopieren
                   </p>
-                  <FileCopyIcon style={{ color: "#009282" }} />
+                  <FileCopyIcon
+                    style={{ color: "#009282" }}
+                    className="copy-button"
+                  />
                 </div>
               </CopyToClipboard>
             </div>

@@ -42,7 +42,7 @@ class App extends Component {
           </p>
         </div>
         <Switch>
-          <RenditeCalc component={RenditeCalc} />
+          <RenditeCalc path="/*" component={RenditeCalc} />
         </Switch>
         <div style={{ marginBottom: "20px", marginTop: "50px" }}>
           <img style={{ height: "50px" }} src={immoLogo} alt="logo"></img>

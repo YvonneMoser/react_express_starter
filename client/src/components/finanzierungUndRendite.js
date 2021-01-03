@@ -86,7 +86,19 @@ class RenditeObjekt extends Component {
                 </label>
                 <div className="no-button-style">
                   <InfoIcon className="info-icon" />
-                  <span className="info-span">Fex muss liefern.</span>
+                  <span className="info-span">
+                    Mit der Gebäudeabschreibung (Afa) wird Immobilienbesitzern
+                    die Möglichkeit gegeben, einen Teil des Kaufpreises ihrer
+                    Immobilie über die Steuererklärung geltend zu machen und
+                    damit ihren steuerlichen Gewinn zu senken. Hierbei darf der
+                    anteilige Wert des Gebäudes über 50 Jahre linear
+                    abgeschrieben werden (d.h. 2% p.a.). Der Wert des
+                    Grundstücks kann hingegen nicht abgeschrieben werden. Für
+                    Bestandswohnungen in München liegt das Verhältnis zwischen
+                    Gebäude und Grund derzeit in etwa bei 30% zu 70%. In
+                    schlechteren Lagen und bei Neubauten ist der Gebäudeanteil
+                    entsprechend höher.
+                  </span>
                 </div>
               </div>
               <p>
