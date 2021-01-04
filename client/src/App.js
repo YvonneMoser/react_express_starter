@@ -3,8 +3,6 @@ import "./App.css";
 import { Switch } from "react-router-dom";
 import RenditeCalc from "./components/rendite";
 import immoLogo from "./immoLogo.png";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import FileCopyIcon from "@material-ui/icons/FileCopy";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import { animateScroll as scroll } from "react-scroll";
 
@@ -58,7 +56,10 @@ class App extends Component {
               alignItems: "center",
             }}
           >
-            <p className="impressum">leonbszeli(at)gmail.com</p>
+            <p className="impressum">
+              leonbszeli(at)gmail.com, felixschiller.consulting(at)gmail.com,
+              yvonne.moser(at)web.de
+            </p>
           </div>
         </div>
         <button

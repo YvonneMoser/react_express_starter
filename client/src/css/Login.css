@@ -129,7 +129,7 @@
 }
 
 .info-icon-container-2 {
-  flex: 2;
+  /* //flex: 2; */
   display: flex;
   flex-direction: row;
   font-weight: bold;

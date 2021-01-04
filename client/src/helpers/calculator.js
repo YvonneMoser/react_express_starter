@@ -5,6 +5,10 @@ export function round(number) {
 
 export function numberWithCommas(number) {
   try {
+    console.log("number", number);
+    if (number === 0 || number === "0") {
+      return "0";
+    }
     return number.toLocaleString("de", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
@@ -25,10 +29,18 @@ export function calculateReturnOnInvest(data) {
   const eigenkapital = Number(data.eigenkapital);
   const zinsen = Number(data.zinsen) / 100;
   const tilgungsrate = Number(data.tilgungsrate) / 100;
+  const umlagefähigesWohngeldEur =
+    data.umlagefähigesWohngeldEur || data.umlagefähigesWohngeldEur === 0
+      ? Number(data.umlagefähigesWohngeldEur)
+      : undefined;
 
   // Berechnet
-  const nichtUmlageFähigesWohngeld = round(wohngeld * 0.7);
-  const umlagefähigesWohngeld = round(wohngeld - nichtUmlageFähigesWohngeld);
+  const umlagefähigesWohngeld =
+    umlagefähigesWohngeldEur || umlagefähigesWohngeldEur === 0
+      ? round(umlagefähigesWohngeldEur)
+      : round(wohngeld * 0.7);
+  console.log("umlagefähigesWohngeld", umlagefähigesWohngeld);
+  const nichtUmlageFähigesWohngeld = round(wohngeld - umlagefähigesWohngeld);
   const kaufpreisqm = round(kaufpreis / qm);
   const grunderwerbssteuerSum = round(kaufpreis * grunderwerbssteuer);
   const notar = round(kaufpreis * 0.015); // konfigurierbar machen?

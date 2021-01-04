@@ -13,8 +13,9 @@ class Mieteinnahmen extends Component {
             <div className="output-div">
               <label className="label-text">Kaltmiete/qm</label>
               <p>
-                {this.props.state.calculatedData &&
-                this.props.state.calculatedData.nettoqm
+                {(this.props.state.calculatedData &&
+                  this.props.state.calculatedData.nettoqm) ||
+                this.props.state.calculatedData.nettoqm === 0
                   ? `${numberWithCommas(
                       this.props.state.calculatedData.nettoqm
                     )} €`
@@ -37,8 +38,9 @@ class Mieteinnahmen extends Component {
                 </div>
               </div>
               <p>
-                {this.props.state.calculatedData &&
-                this.props.state.calculatedData.nichtUmlageFähigesWohngeld
+                {(this.props.state.calculatedData &&
+                  this.props.state.calculatedData.nichtUmlageFähigesWohngeld) ||
+                this.props.state.calculatedData.nichtUmlageFähigesWohngeld === 0
                   ? `${numberWithCommas(
                       this.props.state.calculatedData.nichtUmlageFähigesWohngeld
                     )} €`
@@ -60,8 +62,9 @@ class Mieteinnahmen extends Component {
                 </div>
               </div>
               <p>
-                {this.props.state.calculatedData &&
-                this.props.state.calculatedData.umlagefähigesWohngeld
+                {(this.props.state.calculatedData &&
+                  this.props.state.calculatedData.umlagefähigesWohngeld) ||
+                this.props.state.calculatedData.umlagefähigesWohngeld === 0
                   ? `${numberWithCommas(
                       this.props.state.calculatedData.umlagefähigesWohngeld
                     )} €`
@@ -84,9 +87,11 @@ class Mieteinnahmen extends Component {
                 </div>
               </div>
               <p>
-                {this.props.state.calculatedData &&
+                {(this.props.state.calculatedData &&
+                  this.props.state.calculatedData
+                    .nettoMieteNachNichtUmlagefähigenNK) ||
                 this.props.state.calculatedData
-                  .nettoMieteNachNichtUmlagefähigenNK
+                  .nettoMieteNachNichtUmlagefähigenNK === 0
                   ? `${numberWithCommas(
                       this.props.state.calculatedData
                         .nettoMieteNachNichtUmlagefähigenNK

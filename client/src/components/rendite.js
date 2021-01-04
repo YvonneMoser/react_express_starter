@@ -24,6 +24,8 @@ class Login extends Component {
     zinsen: "",
     tilgungsrate: "",
     calculatedData: undefined,
+    showWohngeld: undefined,
+    umlagefähigesWohngeldEur: "",
   };
 
   handleFormSubmit = async (event) => {
@@ -39,6 +41,7 @@ class Login extends Component {
       kaufpreis,
       zinsen,
       tilgungsrate,
+      umlagefähigesWohngeldEur,
     } = this.state;
     // const sum = await calculator.calculate({
     //   qm,
@@ -64,8 +67,11 @@ class Login extends Component {
       eigenkapital,
       zinsen,
       tilgungsrate,
+      umlagefähigesWohngeldEur,
     });
+    console.log("sum", sum);
     this.setState({ calculatedData: sum });
+    console.log("calculated", this.state.calculatedData);
     this.generateLink();
     scroll.scrollMore(800);
   };
@@ -94,10 +100,14 @@ class Login extends Component {
       "kaufpreis",
       "zinsen",
       "tilgungsrate",
+      "umlagefähigesWohngeldEur",
     ];
     savedDataArray.map((key) => {
+      console.log("key", key);
       if (dataToBeSet.includes(key)) {
-        if (key !== "bundesland") {
+        if (key === "umlagefähigesWohngeldEur") {
+          this.setState({ showWohngeld: true, [key]: savedDataFromUrl[key] });
+        } else if (key !== "bundesland") {
           this.setState({ [key]: Number(savedDataFromUrl[key]) });
         } else {
           this.setState({ [key]: savedDataFromUrl[key] });
@@ -124,6 +134,7 @@ class Login extends Component {
       "kaufpreis",
       "zinsen",
       "tilgungsrate",
+      "umlagefähigesWohngeldEur",
     ];
 
     if (this.state) {
@@ -144,11 +155,12 @@ class Login extends Component {
       instandhaltung,
       nettomiete,
       wohngeld,
-      bundesland,
       kaufpreis,
       zinsen,
       tilgungsrate,
+      umlagefähigesWohngeldEur,
     } = this.state;
+    console.log(this.state.showWohngeld);
     return (
       <div className="main-container">
         <div className="flex-container">
@@ -215,34 +227,6 @@ class Login extends Component {
                       name="nettomiete"
                       placeholder="z.B. 800"
                       value={nettomiete}
-                      onChange={this.handleChange}
-                    />
-                    <p className="currency-input">€</p>
-                  </div>
-                </div>
-
-                <div className="input-var-div">
-                  <div className="info-icon-container-2">
-                    <label className="bold-with-icon">
-                      Monatliches Wohngeld
-                    </label>
-                    <div className="no-button-style">
-                      <InfoIcon className="info-icon" />
-                      <span className="info-span">
-                        Das Wohngeld unterteilen wir pauschal in 70% umlagefähig
-                        und 30% nicht-umlagefähig.
-                      </span>
-                    </div>
-                  </div>
-                  <div className="input-wrapper">
-                    <input
-                      required
-                      className="input"
-                      step="0.01"
-                      type="number"
-                      name="wohngeld"
-                      placeholder="z.B. 240"
-                      value={wohngeld}
                       onChange={this.handleChange}
                     />
                     <p className="currency-input">€</p>
@@ -411,7 +395,7 @@ class Login extends Component {
                       <span className="info-span">
                         Nur den Anteil eingeben, der vom Käufer zu tragen ist.
                         Seit dem 23.12.2020 dürfen dem Käufer nämlich nicht mehr
-                        alas 50% der anfallenden Courtage in Rechnung gestellt
+                        als 50% der anfallenden Courtage in Rechnung gestellt
                         werden. Falls kein Makler involviert ist, einfach 0
                         eintragen.
                       </span>
@@ -430,6 +414,80 @@ class Login extends Component {
                     />
                     <p className="currency-input">%</p>
                   </div>
+                </div>
+
+                <div className="input-var-div">
+                  <div className="info-icon-container-2">
+                    <label className="bold-with-icon">
+                      Monatliches Wohngeld
+                    </label>
+                    <div className="no-button-style">
+                      <InfoIcon className="info-icon" />
+                      <span className="info-span">
+                        Das Wohngeld unterteilen wir pauschal in 70% umlagefähig
+                        und 30% nicht-umlagefähig. Falls du die genaue
+                        Unterteilung kennst, klicke auf "Umlagefähiger Anteil
+                        bekannt/abschätzbar" und trage den konkreten Wert ein.
+                      </span>
+                    </div>
+                  </div>
+                  <div className="input-wrapper">
+                    <input
+                      required
+                      className="input"
+                      step="0.01"
+                      type="number"
+                      name="wohngeld"
+                      placeholder="z.B. 240"
+                      value={wohngeld}
+                      onChange={this.handleChange}
+                    />
+                    <p className="currency-input">€</p>
+                  </div>
+                  <p
+                    style={{
+                      fontSize: "10px",
+                      textAlign: "left",
+                      color: "#009282",
+                      textDecoration: "underline",
+                    }}
+                    onClick={() => {
+                      this.setState({
+                        showWohngeld: !this.state.showWohngeld,
+                      });
+                    }}
+                  >
+                    Umlagefähiger Anteil bekannt/abschätzbar
+                  </p>
+                  {this.state.showWohngeld ? (
+                    <div>
+                      <div className="info-icon-container-2">
+                        <label className="bold-with-icon">
+                          Umlagefähiger Anteil
+                        </label>
+                        <div className="no-button-style">
+                          <InfoIcon className="info-icon" />
+                          <span className="info-span">
+                            Falls du den umlagefähigen Anteil nicht kennst, ist
+                            60% Prozent bei älteren Objekten bzw. 70% bei
+                            neueren Objekten ein guter Richtwert.
+                          </span>
+                        </div>
+                      </div>
+                      <div className="input-wrapper">
+                        <input
+                          className="input"
+                          step="0.01"
+                          type="number"
+                          name="umlagefähigesWohngeldEur"
+                          placeholder="optional z.B. 140"
+                          value={umlagefähigesWohngeldEur}
+                          onChange={this.handleChange}
+                        />
+                        <p className="currency-input">€</p>
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
               </div>
               <button className="calculate-button" type="submit" value="Login">
@@ -455,15 +513,16 @@ class Login extends Component {
                   %
                 </span>
                 . D.h. du erhältst jedes Jahr diese Rendite auf die Summe aus
-                Darlehensbetrag und Eigenkapital, sprich den Wert der Immobilie
-                plus Nebenkosten. Am Aktienmarkt kannst du vermutlich
-                langfristig eine höhere Rendite erzielen, allerdings erzielst du
-                diese Rendite nur mit Eigenkapital und nicht auf Fremdkapital.
-                Eine potentielle Wertsteigerung deiner Immobilie ist bei dieser
-                Rendite nicht berücksichtigt. Die meisten Investoren versuchen
-                auf einen Wert von 3% zu kommen. In sehr gefragten Städten wie
-                München geben sich viele mit 2,0-2,5% zufrieden und spekulieren
-                auf Wertsteigerung.
+                Darlehensbetrag und Eigenkapital (Kaufpreis der Immobilie +
+                Nebenkosten) nach Abzug der zu zahlenden Zinsen. Am Aktienmarkt
+                kannst du vermutlich langfristig eine höhere Rendite erzielen,
+                allerdings erzielst du diese Rendite nur mit Eigenkapital und
+                nicht auf Fremdkapital. Eine potentielle Wertsteigerung deiner
+                Immobilie ist im Rahmen dieser Rendite nicht berücksichtigt. Die
+                meisten Investoren versuchen auf einen Wert von 3% oder mehr zu
+                kommen. In sehr gefragten Städten wie München geben sich viele
+                Käufer mit 2,0 - 2,5% zufrieden und spekulieren auf
+                Wertsteigerung.
               </p>
 
               {/* <CopyToClipboard text={this.state.shareLink}>

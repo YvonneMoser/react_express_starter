@@ -15,8 +15,9 @@ class RenditeObjekt extends Component {
                 Jährliche Nettomietrendite
               </label>
               <p>
-                {this.props.state.calculatedData &&
-                this.props.state.calculatedData.jährlicheNettoMieteRendite
+                {(this.props.state.calculatedData &&
+                  this.props.state.calculatedData.jährlicheNettoMieteRendite) ||
+                this.props.state.calculatedData.jährlicheNettoMieteRendite === 0
                   ? `${numberWithCommas(
                       this.props.state.calculatedData.jährlicheNettoMieteRendite
                     )} %`
@@ -43,8 +44,9 @@ class RenditeObjekt extends Component {
               </div>
 
               <p>
-                {this.props.state.calculatedData &&
-                this.props.state.calculatedData.annuität
+                {(this.props.state.calculatedData &&
+                  this.props.state.calculatedData.annuität) ||
+                this.props.state.calculatedData.annuität === 0
                   ? `${numberWithCommas(
                       this.props.state.calculatedData.annuität
                     )} €`
@@ -69,8 +71,9 @@ class RenditeObjekt extends Component {
                 </div>
               </div>
               <p>
-                {this.props.state.calculatedData &&
-                this.props.state.calculatedData.differenzCashflowAnnuität
+                {(this.props.state.calculatedData &&
+                  this.props.state.calculatedData.differenzCashflowAnnuität) ||
+                this.props.state.calculatedData.differenzCashflowAnnuität === 0
                   ? `${numberWithCommas(
                       this.props.state.calculatedData.differenzCashflowAnnuität
                     )} €`
@@ -95,15 +98,22 @@ class RenditeObjekt extends Component {
                     abgeschrieben werden (d.h. 2% p.a.). Der Wert des
                     Grundstücks kann hingegen nicht abgeschrieben werden. Für
                     Bestandswohnungen in München liegt das Verhältnis zwischen
-                    Gebäude und Grund derzeit in etwa bei 30% zu 70%. In
-                    schlechteren Lagen und bei Neubauten ist der Gebäudeanteil
-                    entsprechend höher.
+                    Gebäude und Grund - wie auch bei unserer Berechnung -
+                    derzeit circa bei 30% zu 70%. In schlechteren Lagen und bei
+                    Neubauten ist der Gebäudeanteil entsprechend höher. Der
+                    AfA-Satz bei Baujahren vor 1925 beträgt ferner 2,5%. Weitere
+                    Infos hierzu ergeben sich aus der Arbeits­hil­fe zur
+                    Auf­tei­lung ei­nes Ge­samt­kauf­prei­ses für ein be­bau­tes
+                    Grund­stück des Finanzministeriums.
                   </span>
                 </div>
               </div>
               <p>
-                {this.props.state.calculatedData &&
-                this.props.state.calculatedData.steuerlichesErgebnisNachAfA
+                {(this.props.state.calculatedData &&
+                  this.props.state.calculatedData
+                    .steuerlichesErgebnisNachAfA) ||
+                this.props.state.calculatedData.steuerlichesErgebnisNachAfA ===
+                  0
                   ? `${numberWithCommas(
                       this.props.state.calculatedData
                         .steuerlichesErgebnisNachAfA
@@ -116,8 +126,9 @@ class RenditeObjekt extends Component {
             <div className="output-div">
               <label className="label-text">Tilgung nach 10 Jahren</label>
               <p>
-                {this.props.state.calculatedData &&
-                this.props.state.calculatedData.tilgungNach10Jahren
+                {(this.props.state.calculatedData &&
+                  this.props.state.calculatedData.tilgungNach10Jahren) ||
+                this.props.state.calculatedData.tilgungNach10Jahren === 0
                   ? `${numberWithCommas(
                       this.props.state.calculatedData.tilgungNach10Jahren
                     )} €`
@@ -143,8 +154,9 @@ class RenditeObjekt extends Component {
                 </div>
               </div>
               <p>
-                {this.props.state.calculatedData &&
-                this.props.state.calculatedData.jahreBisTilgung
+                {(this.props.state.calculatedData &&
+                  this.props.state.calculatedData.jahreBisTilgung) ||
+                this.props.state.calculatedData.jahreBisTilgung === 0
                   ? `${numberWithCommas(
                       this.props.state.calculatedData.jahreBisTilgung
                     )} Jahre`
