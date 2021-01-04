@@ -555,9 +555,10 @@ class Login extends Component {
                     flexDirection: "row",
                     width: "80vw",
                     textAlign: "start",
+                    margin: "auto",
                   }}
                 >
-                  <p style={{ marginRight: "5px" }}>
+                  <p style={{ marginRight: "5px", fontSize: "15px" }}>
                     Klicke, um Link zu deiner Berechnung zu kopieren
                   </p>
                   <FileCopyIcon

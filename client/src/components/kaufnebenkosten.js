@@ -6,9 +6,23 @@ class Kaufpreis extends Component {
   render() {
     return (
       <div>
-        <h4 className="title">Kaufnebenkosten</h4>
+        <h4 className="title">Kaufpreis und Kaufnebenkosten</h4>
         <div className="output-container">
           <form onSubmit={this.handleFormSubmit}>
+            <div className="output-div">
+              <label className="label-text">Kaufpreis/qm</label>
+              <p>
+                {(this.props.state.calculatedData &&
+                  this.props.state.calculatedData.kaufpreisqm) ||
+                this.props.state.calculatedData.kaufpreisqm === 0
+                  ? `${numberWithCommas(
+                      this.props.state.calculatedData.kaufpreisqm
+                    )} €`
+                  : "wird berechnet"}
+              </p>
+            </div>
+            <br />
+
             <div className="output-div">
               <label className="label-text">Makler</label>
               <p>
