@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./../css/Login.css";
-import InfoIcon from "@material-ui/icons/Info";
 import { numberWithCommas } from "../helpers/calculator";
 
 class Mieteinnahmen extends Component {
@@ -27,15 +26,15 @@ class Mieteinnahmen extends Component {
               <div className="info-icon-container-2">
                 <label className="font-weight-normal">
                   Nicht umlagefähiges Wohngeld
-                </label>
-                <div className="no-button-style">
-                  <InfoIcon className="info-icon" />
-                  <span className="info-span">
-                    Der Teil der Nebenkosten, den der Vermieter nicht auf den
-                    Mieter umlegen kann und selbst zahlen muss. Objektabhängig -
-                    circa 30%.
+                  <span className="no-button-style">
+                    ⓘ{" "}
+                    <span className="info-span">
+                      Der Teil der Nebenkosten, den der Vermieter nicht auf den
+                      Mieter umlegen kann und selbst zahlen muss. Objektabhängig
+                      - circa 30%.
+                    </span>
                   </span>
-                </div>
+                </label>
               </div>
               <p>
                 {(this.props.state.calculatedData &&
@@ -52,14 +51,14 @@ class Mieteinnahmen extends Component {
               <div className="info-icon-container-2">
                 <label className="font-weight-normal">
                   Umlagefähiges Wohngeld
-                </label>
-                <div className="no-button-style">
-                  <InfoIcon className="info-icon" />
-                  <span className="info-span">
-                    Der Teil der Nebenkosten, die der Mieter trägt.
-                    Objektabhängig - circa 70%.
+                  <span className="no-button-style">
+                    ⓘ{" "}
+                    <span className="info-span">
+                      Der Teil der Nebenkosten, die der Mieter trägt.
+                      Objektabhängig - circa 70%.
+                    </span>
                   </span>
-                </div>
+                </label>
               </div>
               <p>
                 {(this.props.state.calculatedData &&
@@ -74,17 +73,20 @@ class Mieteinnahmen extends Component {
             <br />
             <div className="output-div">
               <div className="info-icon-container-2">
-                <label className="font-weight-normal">
+                <label
+                  className="font-weight-normal"
+                  // style={{ display: "flex", flexDirection: "row" }}
+                >
                   Kaltmiete nach nicht-umlagefähigem Wohngeld
-                </label>
-                <div className="no-button-style">
-                  <InfoIcon className="info-icon" />
-                  <span className="info-span">
-                    Diesen Betrag kann der Vermieter nutzen um Zinsen und
-                    Tilgung bei der Bank zu begleichen. Der Cashflow, den die
-                    Immobilie für den Eigentümer generiert.
+                  <span className="no-button-style">
+                    ⓘ{" "}
+                    <span className="info-span">
+                      Diesen Betrag kann der Vermieter nutzen um Zinsen und
+                      Tilgung bei der Bank zu begleichen. Der Cashflow, den die
+                      Immobilie für den Eigentümer generiert.
+                    </span>
                   </span>
-                </div>
+                </label>
               </div>
               <p>
                 {(this.props.state.calculatedData &&

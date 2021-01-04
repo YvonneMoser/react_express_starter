@@ -4,7 +4,6 @@ import { calculateReturnOnInvest } from "../helpers/calculator";
 import Kaufpreis from "./kaufnebenkosten";
 import Mieteinnahmen from "./mietverhältnis";
 import RenditeObjekt from "./finanzierungUndRendite";
-import InfoIcon from "@material-ui/icons/Info";
 import { animateScroll as scroll } from "react-scroll";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
@@ -235,14 +234,16 @@ class Login extends Component {
 
                 <div className="input-var-div">
                   <div className="info-icon-container-2">
-                    <label className="bold-with-icon">Sanierungskosten</label>
-                    <div className="no-button-style">
-                      <InfoIcon className="info-icon" />
-                      <span className="info-span">
-                        Falls unmittelbare Renovierungskosten anfallen (z.B.
-                        neue Küche oder Bad). Falls nicht, 0 eintragen.
+                    <label className="bold-with-icon">
+                      Sanierungskosten
+                      <span className="no-button-style">
+                        ⓘ{" "}
+                        <span className="info-span">
+                          Falls unmittelbare Renovierungskosten anfallen (z.B.
+                          neue Küche oder Bad). Falls nicht, 0 eintragen.
+                        </span>
                       </span>
-                    </div>
+                    </label>
                   </div>
                   <div className="input-wrapper">
                     <input
@@ -261,14 +262,16 @@ class Login extends Component {
 
                 <div className="input-var-div">
                   <div className="info-icon-container-2">
-                    <label className="bold-with-icon">Bundesland</label>
-                    <div className="no-button-style">
-                      <InfoIcon className="info-icon" />
-                      <span className="info-span">
-                        Das Bundesland beeinflusst die Höhe der
-                        Grunderwerbssteuer.
+                    <label className="bold-with-icon">
+                      Bundesland
+                      <span className="no-button-style">
+                        ⓘ{" "}
+                        <span className="info-span">
+                          Das Bundesland beeinflusst die Höhe der
+                          Grunderwerbssteuer.
+                        </span>
                       </span>
-                    </div>
+                    </label>
                   </div>
                   <div className="select">
                     <select
@@ -309,16 +312,18 @@ class Login extends Component {
 
                 <div className="input-var-div">
                   <div className="info-icon-container-2">
-                    <label className="bold-with-icon">Eigenkapital</label>
-                    <div className="no-button-style">
-                      <InfoIcon className="info-icon" />
-                      <span className="info-span">
-                        Die meisten Banken verlangen, dass zumindest die
-                        Nebenkosten (ca. 10%) des Kaufpreises) mit Eigenkapital
-                        finanziert werden. Oft wird geraten, 20% Eingenkapital
-                        einzubringen.
+                    <label className="bold-with-icon">
+                      Eigenkapital
+                      <span className="no-button-style">
+                        ⓘ{" "}
+                        <span className="info-span">
+                          Die meisten Banken verlangen, dass zumindest die
+                          Nebenkosten (ca. 10%) des Kaufpreises) mit
+                          Eigenkapital finanziert werden. Oft wird geraten, 20%
+                          Eingenkapital einzubringen.
+                        </span>
                       </span>
-                    </div>
+                    </label>
                   </div>
                   <div className="input-wrapper">
                     <input
@@ -337,14 +342,16 @@ class Login extends Component {
 
                 <div className="input-var-div">
                   <div className="info-icon-container-2">
-                    <label className="bold-with-icon">Zins</label>
-                    <div className="no-button-style">
-                      <InfoIcon className="info-icon" />
-                      <span className="info-span">
-                        0,5 bis 1% Zinsen pro Jahr sind bei derzeitigem
-                        Zinsniveau realistisch.
+                    <label className="bold-with-icon">
+                      Zins
+                      <span className="no-button-style">
+                        ⓘ{" "}
+                        <span className="info-span">
+                          0,5 bis 1% Zinsen pro Jahr sind bei derzeitigem
+                          Zinsniveau realistisch.
+                        </span>
                       </span>
-                    </div>
+                    </label>
                   </div>
                   <div className="input-wrapper">
                     <input
@@ -363,14 +370,16 @@ class Login extends Component {
 
                 <div className="input-var-div">
                   <div className="info-icon-container-2">
-                    <label className="bold-with-icon">Jährliche Tilgung</label>
-                    <div className="no-button-style">
-                      <InfoIcon className="info-icon" />
-                      <span className="info-span">
-                        Die meisten Immobilienkäufer tilgen zwischen 2% und 3%
-                        des Kaufpreises pro Jahr.
+                    <label className="bold-with-icon">
+                      Jährliche Tilgung
+                      <span className="no-button-style">
+                        ⓘ{" "}
+                        <span className="info-span">
+                          Die meisten Immobilienkäufer tilgen zwischen 2% und 3%
+                          des Kaufpreises pro Jahr.
+                        </span>
                       </span>
-                    </div>
+                    </label>
                   </div>
                   <div className="input-wrapper">
                     <input
@@ -388,18 +397,20 @@ class Login extends Component {
                 </div>
 
                 <div className="input-var-div">
-                  <div className="info-icon-container-2">
-                    <label className="bold-with-icon">Maklercourtage</label>
-                    <div className="no-button-style">
-                      <InfoIcon className="info-icon" />
-                      <span className="info-span">
-                        Nur den Anteil eingeben, der vom Käufer zu tragen ist.
-                        Seit dem 23.12.2020 dürfen dem Käufer nämlich nicht mehr
-                        als 50% der anfallenden Courtage in Rechnung gestellt
-                        werden. Falls kein Makler involviert ist, einfach 0
-                        eintragen.
+                  <div className="info-icon-container">
+                    <label className="bold-with-icon">
+                      Maklercourtage
+                      <span className="no-button-style">
+                        ⓘ{" "}
+                        <span className="info-span">
+                          Nur den Anteil eingeben, der vom Käufer zu tragen ist.
+                          Seit dem 23.12.2020 dürfen dem Käufer nämlich nicht
+                          mehr als 50% der anfallenden Courtage in Rechnung
+                          gestellt werden. Falls kein Makler involviert ist,
+                          einfach 0 eintragen.
+                        </span>
                       </span>
-                    </div>
+                    </label>
                   </div>
                   <div className="input-wrapper">
                     <input
@@ -420,16 +431,17 @@ class Login extends Component {
                   <div className="info-icon-container-2">
                     <label className="bold-with-icon">
                       Monatliches Wohngeld
-                    </label>
-                    <div className="no-button-style">
-                      <InfoIcon className="info-icon" />
-                      <span className="info-span">
-                        Das Wohngeld unterteilen wir pauschal in 70% umlagefähig
-                        und 30% nicht-umlagefähig. Falls du die genaue
-                        Unterteilung kennst, klicke auf "Umlagefähiger Anteil
-                        bekannt/abschätzbar" und trage den konkreten Wert ein.
+                      <span className="no-button-style">
+                        ⓘ{" "}
+                        <span className="info-span">
+                          Das Wohngeld unterteilen wir pauschal in 70%
+                          umlagefähig und 30% nicht-umlagefähig. Falls du die
+                          genaue Unterteilung kennst, klicke auf "Umlagefähiger
+                          Anteil bekannt/abschätzbar" und trage den konkreten
+                          Wert ein.
+                        </span>
                       </span>
-                    </div>
+                    </label>
                   </div>
                   <div className="input-wrapper">
                     <input
@@ -464,15 +476,15 @@ class Login extends Component {
                       <div className="info-icon-container-2">
                         <label className="bold-with-icon">
                           Umlagefähiger Anteil
-                        </label>
-                        <div className="no-button-style">
-                          <InfoIcon className="info-icon" />
-                          <span className="info-span">
-                            Falls du den umlagefähigen Anteil nicht kennst, ist
-                            60% Prozent bei älteren Objekten bzw. 70% bei
-                            neueren Objekten ein guter Richtwert.
+                          <span className="no-button-style">
+                            ⓘ{" "}
+                            <span className="info-span">
+                              Falls du den umlagefähigen Anteil nicht kennst,
+                              ist 60% Prozent bei älteren Objekten bzw. 70% bei
+                              neueren Objekten ein guter Richtwert.
+                            </span>
                           </span>
-                        </div>
+                        </label>
                       </div>
                       <div className="input-wrapper">
                         <input
